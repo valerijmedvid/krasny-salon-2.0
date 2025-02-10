@@ -1,5 +1,5 @@
 {
-  "name": "nuxt-app",
+  "name": "krasny-salon",
   "private": true,
   "type": "module",
   "scripts": {
@@ -13,5 +13,8 @@
     "nuxt": "^3.15.4",
     "vue": "latest",
     "vue-router": "latest"
+  },
+  "devDependencies": {
+    "sass": "^1.84.0"
   }
 }
