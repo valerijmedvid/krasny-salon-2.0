@@ -1,13 +1,13 @@
 <template>
   <div>
-    <h1>Sluzby</h1>
+    <h1>Cenik</h1>
   </div>
 </template>
 
 <script setup lang="ts">
 useHead({
   titleTemplate: (titleChunk) => {
-    return `${titleChunk} - Služby`;
+    return `${titleChunk} - Objemové prodlužování řas`;
   },
 });
 </script>

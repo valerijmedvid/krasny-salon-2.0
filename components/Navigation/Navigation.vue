@@ -12,19 +12,17 @@
     </ul>
   </nav>
 
-  <div
-    :class="['overlay', { 'overlay-active': isMenuActive }]"
-    @click="closeMenu"
-  />
+  <Overlay :is-active="isMenuActive" @click="closeMenu" />
 </template>
 
 <script setup lang="ts">
 import { ref } from "vue";
 import Burger from "./Burger.vue";
+import Overlay from "./Overlay.vue";
 
 type menuItem = {
   label: string;
-  to?: string;
+  to: string;
 };
 
 const menuItems: menuItem[] = [
@@ -51,31 +49,13 @@ function closeMenu() {
 @use "assets/css/mixins";
 @use "sass:math";
 
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
-  z-index: 100;
-  transition-duration: 0.3s, visibility 0.3s;
-  opacity: 0;
-  visibility: hidden;
-}
-
-.overlay-active {
-  opacity: 1;
-  visibility: visible;
-}
-
 nav {
   min-height: 81px;
 }
 
 .hideNavigation {
   @include mixins.display("sm") {
-    transform: translateX(-50vw);
+    transform: translateX(-200px);
   }
 }
 
@@ -85,6 +65,7 @@ ul {
   list-style: none;
   padding: 0;
   margin: 0;
+  gap: 4px;
 
   @include mixins.display("md") {
     & {
@@ -101,10 +82,10 @@ ul {
       position: fixed;
       top: 0;
       left: 0;
-      width: 50vw;
+      width: 200px;
       height: 100vh;
       background-color: vars.$pink;
-      z-index: 101;
+      z-index: 100;
       transition: transform 0.3s;
     }
   }

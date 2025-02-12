@@ -31,8 +31,8 @@
 
   @include mixins.display("sm") {
     & {
-      left: auto;
-      right: 10px;
+      width: 100px;
+      left: calc(50vw - 50px);
     }
   }
 }

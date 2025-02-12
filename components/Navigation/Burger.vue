@@ -2,7 +2,7 @@
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 -960 960 960"
-    fill="#ffffff"
+    fill="#c86a73"
     class="burger"
   >
     <path
@@ -16,17 +16,17 @@
 @use "assets/css/mixins";
 
 .burger {
-  width: 45px;
-  margin: 30px 0 0 30px;
+  width: 40px;
+  height: 40px;
+  margin: 30px 0 0 20px;
   padding: 2px;
-  height: 45px;
   cursor: pointer;
   border-radius: 5px;
-  background-color: vars.$pink;
+  border: 2px solid vars.$pink;
   display: none;
 
   &:hover {
-    background-color: vars.$pink-light;
+    border-color: vars.$pink-light;
   }
 
   @include mixins.display("sm") {
