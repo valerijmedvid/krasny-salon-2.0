@@ -1,10 +1,10 @@
 <template>
   <nav>
-    <Burger class="burger" @click="showMenu" />
+    <Burger @click="toggleMenu" />
 
-    <ul class="hideUl">
+    <ul :class="{ hideNavigation: !isMenuActive }">
       <li v-for="item in menuItems" :key="item.label">
-        <nuxt-link class="link" :to="item.to" @click="hideMenu">
+        <nuxt-link class="link" :to="item.to" @click="closeMenu">
           <div class="menu-btn" v-text="item.label" />
           <div class="underline" />
         </nuxt-link>
@@ -12,10 +12,14 @@
     </ul>
   </nav>
 
-  <div class="overlay" @click="hideMenu" />
+  <div
+    :class="['overlay', { 'overlay-active': isMenuActive }]"
+    @click="closeMenu"
+  />
 </template>
 
 <script setup lang="ts">
+import { ref } from "vue";
 import Burger from "./Burger.vue";
 
 type menuItem = {
@@ -31,25 +35,19 @@ const menuItems: menuItem[] = [
   { label: "Kontakt", to: "/kontakt" },
 ];
 
-function showMenu() {
-  const overlay = document.querySelector(".overlay");
-  overlay?.classList.add("overlay-active");
+const isMenuActive = ref(false);
 
-  const ul = document.querySelector("ul");
-  ul?.classList.remove("hideUl");
+function toggleMenu() {
+  isMenuActive.value = !isMenuActive.value;
 }
 
-function hideMenu() {
-  const overlay = document.querySelector(".overlay");
-  overlay?.classList.remove("overlay-active");
-
-  const ul = document.querySelector("ul");
-  ul?.classList.add("hideUl");
+function closeMenu() {
+  isMenuActive.value = false;
 }
 </script>
 
 <style scoped lang="scss">
-@use "assets/css/variables";
+@use "assets/css/variables" as vars;
 @use "assets/css/mixins";
 @use "sass:math";
 
@@ -61,7 +59,7 @@ function hideMenu() {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.3);
   z-index: 100;
-  transition-duration: 0.3s;
+  transition-duration: 0.3s, visibility 0.3s;
   opacity: 0;
   visibility: hidden;
 }
@@ -75,29 +73,7 @@ nav {
   min-height: 81px;
 }
 
-.burger {
-  width: 45px;
-  margin-top: 30px;
-  padding: 2px;
-  margin-left: 30px;
-  height: 45px;
-  cursor: pointer;
-  border-radius: 5px;
-  background-color: variables.$pink;
-  display: none;
-
-  &:hover {
-    background-color: variables.$pink-light;
-  }
-
-  @include mixins.display("sm") {
-    & {
-      display: inline-block;
-    }
-  }
-}
-
-.hideUl {
+.hideNavigation {
   @include mixins.display("sm") {
     transform: translateX(-50vw);
   }
@@ -127,9 +103,9 @@ ul {
       left: 0;
       width: 50vw;
       height: 100vh;
-      background-color: variables.$pink;
+      background-color: vars.$pink;
       z-index: 101;
-      transition-duration: 0.3s;
+      transition: transform 0.3s;
     }
   }
 }
@@ -139,7 +115,7 @@ ul {
 }
 
 .link {
-  color: variables.$black;
+  color: vars.$black;
   text-decoration: none;
   position: relative;
   font-size: 16px;
@@ -155,11 +131,10 @@ ul {
 
   @include mixins.display("sm") {
     & {
-      color: variables.$white;
+      color: vars.$white;
     }
 
     &:hover {
-      color: variables.$black;
       opacity: 0.5;
     }
   }
@@ -169,17 +144,25 @@ ul {
   opacity: 1;
 }
 
+.router-link-active {
+  @include mixins.display("sm") {
+    & {
+      opacity: 0.5;
+    }
+  }
+}
+
 $underline-height: 3px;
 .underline {
   position: absolute;
   opacity: 0;
-  background-color: variables.$pink;
+  background-color: vars.$pink;
   height: $underline-height;
   border-radius: math.div($underline-height, 2);
   width: 100%;
   bottom: 0;
   left: 0;
   right: 0;
-  transition-duration: 0.3s;
+  transition: opacity 0.3s;
 }
 </style>
