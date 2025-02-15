@@ -1,5 +1,7 @@
 <template>
-  <h1>Homepage</h1>
+  <div class="page">
+    <h1 class="page-title">Vítejte!</h1>
+  </div>
 </template>
 
 <script setup lang="ts">

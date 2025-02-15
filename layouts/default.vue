@@ -1,12 +1,16 @@
 <template>
-  <header>
-    <Logo />
+  <div class="page-wrapper">
+    <header>
+      <Logo />
+      <Navigation />
+    </header>
 
-    <Navigation />
-  </header>
-  <slot />
+    <div class="content">
+      <slot />
+    </div>
 
-  <FooterAddress />
+    <FooterAddress />
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -18,5 +22,15 @@ import FooterAddress from "~/components/FooterAddress.vue";
 <style scoped>
 header {
   position: relative;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  flex: 1;
 }
 </style>
