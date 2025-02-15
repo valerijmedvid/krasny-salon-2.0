@@ -56,11 +56,11 @@ useHead({
 .contact {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 15%;
   margin-top: 30px;
 
   & div {
-    width: 35%;
+    max-width: 350px;
   }
 
   & strong {
@@ -86,10 +86,9 @@ useHead({
 
 #map {
   width: 100%;
-  height: 350px;
-  border: 1px solid #f0f0f0;
-  background-color: #f0f0f0;
-  margin-top: 2rem;
+  height: 400px;
+  margin-top: 5rem;
   margin-bottom: -5px;
+  border: 0;
 }
 </style>
