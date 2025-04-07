@@ -60,6 +60,19 @@ article {
       max-width: none;
     }
   }
+
+  a {
+    color: vars.$pink;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+
+    &:hover {
+      color: vars.$pink-light;
+      text-decoration: underline;
+    }
+  }
 }
 
 .fade-enter-active,

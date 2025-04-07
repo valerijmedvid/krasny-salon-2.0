@@ -24,7 +24,7 @@
         </a>
       </p>
     </div>
-    <p class="year">Krasný salon &copy; {{ new Date().getFullYear() }}</p>
+    <p class="year">Krásný salon &copy; {{ new Date().getFullYear() }}</p>
   </footer>
 </template>
 
