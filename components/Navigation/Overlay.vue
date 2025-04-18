@@ -15,8 +15,9 @@ const props = defineProps<{
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(4px);
   z-index: 99;
-  transition-duration: 0.3s;
+  transition: 0.3s;
   opacity: 0;
   visibility: hidden;
 }
