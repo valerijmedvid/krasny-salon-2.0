@@ -12,10 +12,10 @@
         <h3>Volume 2–6D</h3>
         <table>
           <tbody>
-            <tr v-for="s in lashesVolume" :key="s.name + s.note">
-              <td class="name">{{ s.name }}</td>
-              <td class="note">{{ s.note }}</td>
-              <td class="price">{{ s.price }}&nbsp;Kč</td>
+            <tr v-for="(row, i) in lashesVolume" :key="i">
+              <td class="name">{{ row.name }}</td>
+              <td class="note">{{ row.note }}</td>
+              <td class="price">{{ row.price }}&nbsp;Kč</td>
             </tr>
           </tbody>
         </table>
@@ -23,18 +23,10 @@
         <h3>Mega Volume 7–10D</h3>
         <table>
           <tbody>
-            <tr v-for="s in lashesMegaVolume" :key="s.name + s.note">
-              <td class="name">{{ s.name }}</td>
-              <td class="note">{{ s.note }}</td>
-              <td class="price">{{ s.price }}&nbsp;Kč</td>
-            </tr>
-            <tr>
-              <td colspan="2">Sundání řas</td>
-              <td class="price">290&nbsp;Kč</td>
-            </tr>
-            <tr>
-              <td colspan="2">Doplnění od jiné stylistky</td>
-              <td class="price">990&nbsp;Kč</td>
+            <tr v-for="(row, i) in lashesMegaVolume" :key="i">
+              <td class="name">{{ row.name }}</td>
+              <td class="note">{{ row.note }}</td>
+              <td class="price">{{ row.price }}&nbsp;Kč</td>
             </tr>
           </tbody>
         </table>
@@ -54,22 +46,16 @@
         </h2>
         <table>
           <tbody>
-            <tr v-for="s in cosmetic" :key="s.name">
+            <tr v-for="row in cosmetic" :key="row.name">
               <td>
-                <strong>{{ s.name }}</strong>
-                <small v-if="s.interval"> {{ s.interval }}</small>
-                <br v-if="s.note" />
-                <small v-if="s.note">– {{ s.note }}</small>
+                <strong>{{ row.name }}</strong>
+                <small v-if="row.interval"> {{ row.interval }}</small>
+                <template v-if="row.note">
+                  <br />
+                  <small>– {{ row.note }}</small>
+                </template>
               </td>
-              <td class="price">{{ s.price }}&nbsp;Kč</td>
-            </tr>
-            <tr>
-              <td>Barvení řas</td>
-              <td class="price">120&nbsp;Kč</td>
-            </tr>
-            <tr>
-              <td>Barvení obočí</td>
-              <td class="price">120&nbsp;Kč</td>
+              <td class="price">{{ row.price }}&nbsp;Kč</td>
             </tr>
           </tbody>
         </table>
@@ -149,29 +135,47 @@
 </template>
 
 <script setup lang="ts">
-import syncareSrc from "~/assets/images/syncare.jpg";
-import lyconLogoSrc from "~/assets/images/lycon/lycon_logo.png";
+import syncare from "~/assets/images/syncare.jpg";
+import lyconLogo from "~/assets/images/lycon/lycon_logo.png";
 
-const syncare = syncareSrc;
-const lyconLogo = lyconLogoSrc;
+interface PriceRow {
+  name: string;
+  note?: string;
+  price: number;
+}
 
-const lashesVolume = [
-  { name: "Nový set", note: "", price: 1350 },
+interface CosmeticRow {
+  name: string;
+  interval?: string;
+  note?: string;
+  price: number;
+}
+
+interface DualPriceRow {
+  name: string;
+  price1: number;
+  price2: number | null;
+}
+
+const lashesVolume: PriceRow[] = [
+  { name: "Nový set", price: 1350 },
   { name: "Doplnění", note: "po dvou týdnech", price: 660 },
   { name: "", note: "po třech týdnech", price: 760 },
   { name: "", note: "po čtyřech týdnech", price: 860 },
   { name: "", note: "více než po měsíci", price: 990 },
 ];
 
-const lashesMegaVolume = [
-  { name: "Nový set", note: "", price: 1550 },
+const lashesMegaVolume: PriceRow[] = [
+  { name: "Nový set", price: 1550 },
   { name: "Doplnění", note: "po dvou týdnech", price: 760 },
   { name: "", note: "po třech týdnech", price: 860 },
   { name: "", note: "po čtyřech týdnech", price: 960 },
   { name: "", note: "více než po měsíci", price: 1090 },
+  { name: "Sundání řas", price: 290 },
+  { name: "Doplnění od jiné stylistky", price: 990 },
 ];
 
-const cosmetic = [
+const cosmetic: CosmeticRow[] = [
   {
     name: "Základní ošetření",
     interval: "90 min",
@@ -190,9 +194,11 @@ const cosmetic = [
     note: "základní ošetření + ošetření dekoltu (masáž + maska)",
     price: 1030,
   },
+  { name: "Barvení řas", price: 120 },
+  { name: "Barvení obočí", price: 120 },
 ];
 
-const lyconFace = [
+const lyconFace: DualPriceRow[] = [
   { name: "Obočí", price1: 230, price2: 170 },
   { name: "Horní ret", price1: 200, price2: 160 },
   { name: "Brada", price1: 220, price2: 170 },
@@ -201,12 +207,12 @@ const lyconFace = [
   { name: "Celý obličej (obočí, ret, tváře, brada)", price1: 680, price2: 610 },
 ];
 
-const lyconBody = [
+const lyconBody: PriceRow[] = [
   { name: "Podpaží", price: 450 },
   { name: "Třísla", price: 450 },
 ];
 
-const lyconBodyRollOn = [
+const lyconBodyRollOn: PriceRow[] = [
   { name: "Lýtka / stehna", price: 490 },
   { name: "Nohy ¾", price: 590 },
   { name: "Celé nohy", price: 800 },
