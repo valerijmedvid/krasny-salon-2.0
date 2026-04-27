@@ -39,10 +39,10 @@
           </tbody>
         </table>
         <p class="notice">
-          <strong
-            >Pokud přijde klientka na běžné doplnění bez řas, bude jí účtována
-            cena 990 Kč (Mega Volume 1 090 Kč)!</strong
-          >
+          <strong>
+            Pokud přijde klientka na běžné doplnění bez řas, bude jí účtována
+            cena 990&nbsp;Kč (Mega Volume 1&nbsp;090&nbsp;Kč)!
+          </strong>
         </p>
       </section>
 

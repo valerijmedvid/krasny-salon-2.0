@@ -113,3 +113,11 @@ article {
 .fade-leave-to {
   opacity: 0;
 }
+
+// Fix silentbox arrow buttons — browsers add border on all 4 sides by default,
+// which makes the rotated box look like a diamond instead of a chevron.
+#silentbox-overlay__arrow-buttons .arrow {
+  background: transparent;
+  border-right: none;
+  border-bottom: none;
+}

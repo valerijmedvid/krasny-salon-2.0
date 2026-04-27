@@ -31,7 +31,9 @@
       </p>
       <p>Děkuji za pochopení.</p>
 
-      <silent-box class="gallery-salon" :gallery="gallery" lazy-loading />
+      <ClientOnly>
+        <silent-box class="gallery-salon" :gallery="gallery" lazy-loading />
+      </ClientOnly>
     </article>
   </div>
 </template>

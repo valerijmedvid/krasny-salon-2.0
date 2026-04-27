@@ -46,7 +46,9 @@
         ovonět :-)
       </p>
 
-      <silent-box class="gallery-party" :gallery="gallery" lazy-loading />
+      <ClientOnly>
+        <silent-box class="gallery-party" :gallery="gallery" lazy-loading />
+      </ClientOnly>
     </article>
   </div>
 </template>

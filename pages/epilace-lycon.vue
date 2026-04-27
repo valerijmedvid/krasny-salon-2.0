@@ -88,7 +88,9 @@
         />
       </div>
 
-      <silent-box class="gallery-lycon" :gallery="gallery" lazy-loading />
+      <ClientOnly>
+        <silent-box class="gallery-lycon" :gallery="gallery" lazy-loading />
+      </ClientOnly>
     </article>
   </div>
 </template>
