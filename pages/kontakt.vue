@@ -43,9 +43,17 @@
 
 <script setup lang="ts">
 useHead({
-  titleTemplate: (titleChunk) => {
-    return `${titleChunk} - Kontakt`;
-  },
+  title: "Kontakt | Krásný salon – Nymburk",
+  meta: [
+    {
+      name: "description",
+      content:
+        "Kontakt na Krásný salon v Nymburce – Dominika Medviď. Tel: +420 606 025 605, email: dominika@krasnysalon.cz. Františka Přítele 333, Nymburk 288 02.",
+    },
+    { property: "og:title", content: "Kontakt | Krásný salon – Nymburk" },
+    { property: "og:url", content: "https://www.krasnysalon.cz/kontakt" },
+  ],
+  link: [{ rel: "canonical", href: "https://www.krasnysalon.cz/kontakt" }],
 });
 </script>
 
