@@ -2,10 +2,15 @@
 export default defineNuxtConfig({
   compatibilityDate: "2024-11-01",
   devtools: { enabled: true },
+  ssr: false,
+  plugins: [{ src: "~/plugins/vue-silentbox.client.ts", mode: "client" }],
   css: ["~/assets/css/main.scss"],
   app: {
     pageTransition: { name: "fade", mode: "out-in" },
     head: {
+      htmlAttrs: {
+        lang: "cs",
+      },
       title: "Krásný salon",
       meta: [
         {

@@ -30,14 +30,45 @@
         mě prosím co nejdříve, abych měla prostor pro případné přeobjednávání.
       </p>
       <p>Děkuji za pochopení.</p>
+
+      <silent-box class="gallery" :gallery="gallery" />
     </article>
   </div>
 </template>
 
 <script setup lang="ts">
+import { useGallery } from "@/composables/useGallery";
+
+const gallery = useGallery("salon");
+console.log(gallery);
+
 useHead({
   titleTemplate: (titleChunk) => {
     return `${titleChunk} - Objemové prodlužování řas`;
   },
 });
 </script>
+
+<style scoped>
+/* .gallery-home > a > img {
+  margin: 0 auto 15px;
+  max-width: 800px;
+  width: 100%;
+  border-radius: 0.2em;
+  box-shadow: 0 0 6px #636363;
+}
+
+.gallery-home img:hover {
+  transform: scale(1.025);
+} */
+:deep() {
+  .gallery .silentbox-item > img {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    height: 400px;
+    width: 100%;
+  }
+}
+</style>
