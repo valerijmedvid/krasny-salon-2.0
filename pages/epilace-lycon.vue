@@ -12,18 +12,23 @@
 
       <h2>Luxusní krémové vosky LYCON – australská epilační metoda</h2>
       <p>
-        LYCON je světovým lídrem v oblasti odstraňování chloupků voskem již od roku 1978 a je volen odborníky
-        jako produkt nejvyšší kvality. Jako jediný vosk na světě obdržel certifikaci ISO a zvítězil na
-        British Beauty Awards v letech 2014, 2015 a 2018 v kategorii epilačních přípravků. LYCON má věrné
-        fanoušky mezi celebritami jako Victoria Beckham či Sienna Miller.
+        LYCON je světovým lídrem v oblasti odstraňování chloupků voskem již od
+        roku 1978 a je volen odborníky jako produkt nejvyšší kvality. Jako
+        jediný vosk na světě obdržel certifikaci ISO a zvítězil na British
+        Beauty Awards v letech 2014, 2015 a 2018 v kategorii epilačních
+        přípravků. LYCON má věrné fanoušky mezi celebritami jako Victoria
+        Beckham či Sienna Miller.
       </p>
       <p>
-        Australské krémové vosky LYCON s unikátní technologií oxidu titaničitého se aplikují na olejem
-        ošetřenou pokožku, což zajišťuje její 100% ochranu a péči i během epilace. Nemusíme se již starat o
-        jakékoliv podráždění díky použití těch nejkvalitnějších přírodních ingrediencí, nízké teplotě tání a
-        mimořádným výživovým vlastnostem těchto vosků. Vosky jsou nezvykle pružné, ohebné a lehko
-        uchopitelné. Unikátní vosky LYCON efektivně odstraňují chloupky již od délky 1 mm a vždy dosáhnou
-        výsledku celkově hladké pokožky! Celý systém je navržen tak, aby ošetření bylo efektivní a bezbolestné!
+        Australské krémové vosky LYCON s unikátní technologií oxidu titaničitého
+        se aplikují na olejem ošetřenou pokožku, což zajišťuje její 100% ochranu
+        a péči i během epilace. Nemusíme se již starat o jakékoliv podráždění
+        díky použití těch nejkvalitnějších přírodních ingrediencí, nízké teplotě
+        tání a mimořádným výživovým vlastnostem těchto vosků. Vosky jsou
+        nezvykle pružné, ohebné a lehko uchopitelné. Unikátní vosky LYCON
+        efektivně odstraňují chloupky již od délky 1 mm a vždy dosáhnou výsledku
+        celkově hladké pokožky! Celý systém je navržen tak, aby ošetření bylo
+        efektivní a bezbolestné!
       </p>
 
       <img
@@ -54,7 +59,14 @@
         <iframe
           src="https://www.youtube.com/embed/CVLMBwVFmOc"
           title="LYCON epilační vosky – ukázka"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allow="
+            accelerometer;
+            autoplay;
+            clipboard-write;
+            encrypted-media;
+            gyroscope;
+            picture-in-picture;
+          "
           allowfullscreen
           loading="lazy"
         />
@@ -63,7 +75,14 @@
         <iframe
           src="https://www.youtube.com/embed/7SyMALReO1U"
           title="LYCON epilace – výsledky"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allow="
+            accelerometer;
+            autoplay;
+            clipboard-write;
+            encrypted-media;
+            gyroscope;
+            picture-in-picture;
+          "
           allowfullscreen
           loading="lazy"
         />
@@ -167,7 +186,9 @@ useHead({
     width: 100%;
     border-radius: 4px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
-    transition: transform 0.25s, box-shadow 0.25s;
+    transition:
+      transform 0.25s,
+      box-shadow 0.25s;
 
     &:hover {
       transform: scale(1.025);

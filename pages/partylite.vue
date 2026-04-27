@@ -32,7 +32,11 @@
       <p>
         Katalog produktů k dostání u mě v salonu, nebo v elektronické podobě na
         stránkách
-        <a href="https://www.partylite.cz" target="_blank" rel="noopener noreferrer">
+        <a
+          href="https://www.partylite.cz"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           www.partylite.cz
         </a>
       </p>
@@ -85,7 +89,9 @@ useHead({
   width: 100%;
   border-radius: 6px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
-  transition: transform 0.25s, box-shadow 0.25s;
+  transition:
+    transform 0.25s,
+    box-shadow 0.25s;
 }
 
 :deep(.gallery-party .silentbox-item > img:hover) {
@@ -93,4 +99,3 @@ useHead({
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
 }
 </style>
-

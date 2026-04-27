@@ -39,7 +39,10 @@
           </tbody>
         </table>
         <p class="notice">
-          <strong>Pokud přijde klientka na běžné doplnění bez řas, bude jí účtována cena 990 Kč (Mega Volume 1 090 Kč)!</strong>
+          <strong
+            >Pokud přijde klientka na běžné doplnění bez řas, bude jí účtována
+            cena 990 Kč (Mega Volume 1 090 Kč)!</strong
+          >
         </p>
       </section>
 
@@ -104,7 +107,9 @@
             <tr v-for="s in lyconFace" :key="s.name">
               <td>{{ s.name }}</td>
               <td class="price">{{ s.price1 }}&nbsp;Kč</td>
-              <td class="price">{{ s.price2 ? s.price2 + '\u00a0Kč' : '–' }}</td>
+              <td class="price">
+                {{ s.price2 ? s.price2 + "\u00a0Kč" : "–" }}
+              </td>
             </tr>
           </tbody>
         </table>
@@ -126,7 +131,9 @@
         <table>
           <thead>
             <tr>
-              <th colspan="2">Epilace těla <small>(teplý vosk roll-on)</small></th>
+              <th colspan="2">
+                Epilace těla <small>(teplý vosk roll-on)</small>
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -342,4 +349,3 @@ table {
   max-width: none !important;
 }
 </style>
-

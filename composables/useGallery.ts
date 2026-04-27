@@ -8,7 +8,7 @@ export const useGallery = (category: string, options?: GalleryOptions) => {
     {
       eager: true,
       import: "default",
-    }
+    },
   );
 
   const gallery = Object.entries(allImages)

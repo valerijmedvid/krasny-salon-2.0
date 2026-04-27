@@ -49,7 +49,10 @@ useHead({
       content:
         "Kosmetický salon v Nymburce. Objemové prodlužování řas 2–6D, kosmetická ošetření pleti Syncare, epilace Lycon. Dominika Medviď, tel. +420 606 025 605.",
     },
-    { property: "og:title", content: "Krásný salon – Nymburk | Dominika Medviď" },
+    {
+      property: "og:title",
+      content: "Krásný salon – Nymburk | Dominika Medviď",
+    },
     { property: "og:url", content: "https://www.krasnysalon.cz/" },
   ],
   link: [{ rel: "canonical", href: "https://www.krasnysalon.cz/" }],
@@ -105,7 +108,9 @@ useHead({
   object-fit: cover;
   border-radius: 6px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
-  transition: transform 0.25s, box-shadow 0.25s;
+  transition:
+    transform 0.25s,
+    box-shadow 0.25s;
 }
 
 :deep(.gallery-salon .silentbox-item > img:hover) {
