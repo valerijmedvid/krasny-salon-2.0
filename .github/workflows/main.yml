@@ -39,3 +39,6 @@ jobs:
             **/.git*/**
             **/node_modules/**
             **/*.md
+            .htaccess
+            assets
+            assets/**
